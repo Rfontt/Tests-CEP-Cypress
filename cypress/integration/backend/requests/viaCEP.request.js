@@ -1,0 +1,11 @@
+/// <reference types="cypress" />
+
+function findCep(cep) {
+    return cy.request({
+        method: 'GET',
+        url: `viacep.com.br/ws/${cep}/json/`,
+        failOnStatusCode: false
+    }).as('Response');
+}
+
+export { findCep };
